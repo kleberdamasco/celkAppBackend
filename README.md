@@ -15,6 +15,12 @@
 - created : LocalDateTime
 
 
+**Melhorias**
+- Implementação de mensagens de retorno para o frontend, com mensagens padronizadas para erro e sucesso
+- Ajustes de seguraça
+- Ajustes na obrigatoriade dos campos a serem recebidos do frontend
+
+
 **Acesso ao teste**
 [Heroku](https://celk-app.herokuapp.com/)
 
