@@ -19,7 +19,6 @@ public class FederatedStateService {
         return federatedStateRepository.save(federatedState);
     }
 
-
     public List<FederatedState> getAll(){
         return federatedStateRepository.findAll();
     }
@@ -28,5 +27,13 @@ public class FederatedStateService {
         FederatedState federatedState = new FederatedState();
         federatedState.setId(id);
         federatedStateRepository.delete(federatedState);
+    }
+
+    public FederatedState getById(Long id) {
+        return federatedStateRepository.findById(id).get();
+    }
+
+    public FederatedState update(FederatedState federatedState) {
+        return federatedStateRepository.save(federatedState);
     }
 }

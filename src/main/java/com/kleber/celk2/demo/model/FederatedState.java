@@ -23,7 +23,7 @@ public class FederatedState {
     @GeneratedValue
     private Long id;
     private String name;
-    private String initial;
+    private String initials;
     private LocalDateTime created;
 
 }

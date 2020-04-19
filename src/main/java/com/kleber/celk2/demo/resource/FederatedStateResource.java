@@ -21,7 +21,17 @@ public class FederatedStateResource {
 
     @PostMapping("/create")
     public ResponseEntity<FederatedState> create(@RequestBody FederatedState federatedState) {
-        return ResponseEntity.created(URI.create("/fs/created")).body(federatedStateService.save(federatedState));
+        return ResponseEntity.created(URI.create("/fs/create")).body(federatedStateService.save(federatedState));
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity<FederatedState> update(@RequestBody FederatedState federatedState) {
+        return ResponseEntity.created(URI.create("/fs/update")).body(federatedStateService.update(federatedState));
+    }
+
+    @GetMapping("/id/{id}")
+    public ResponseEntity<FederatedState> getById(@PathVariable Long id){
+        return ResponseEntity.ok(federatedStateService.getById(id));
     }
 
     @GetMapping("/all")
@@ -29,7 +39,7 @@ public class FederatedStateResource {
         return ResponseEntity.ok(federatedStateService.getAll());
     }
 
-    @DeleteMapping("/delete/id/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<FederatedState> deleteMovie(@PathVariable Long id) {
         federatedStateService.delete(id);
         return ResponseEntity.ok().build();
